@@ -10,9 +10,13 @@ describe('My First Test', () => {
     //step 4 - the url should now change to include the following path
     cy.url().should('include', '/commands/actions')
 
-    //step 5 - validate correct behavior of element
+    //step 5 - validate correct behavior of Email element
     cy.get('.action-email')
       .type('fake@email.com')
       .should('have.value', 'fake@email.com')
+
+    //step 5 - validate correct behavior of Disabled element
+    cy.get('.action-disabled')
+     .should('be.disabled')
   })
 })
